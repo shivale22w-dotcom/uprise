@@ -26,14 +26,17 @@ export default function LessonsPage() {
             <img src={lesson.image_url} alt={lesson.title} className="mt-4 rounded" />
           )}
 
-          {lesson.tags?.length > 0 && (
-            <div className="mt-2 text-sm text-gray-600">Tags: {lesson.tags.join(', ')}</div>
+          {Array.isArray(lesson.tags) && lesson.tags.length > 0 && (
+            <div className="mt-2 text-sm text-gray-600">
+              Tags: {lesson.tags.join(', ')}
+            </div>
           )}
         </div>
       ))}
     </div>
   )
 }
+
 
 
 
